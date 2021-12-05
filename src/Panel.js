@@ -4,10 +4,8 @@ class Panel extends Component {
   render() {
     return (
       <div className="Panel">
-        <h4 className= "Panel-Title" >{this.props.Ueberschrift}</h4>
-        <panel>
-        <p className= "Panel-Content">{this.props.label}</p>
-        </panel>
+        <h4 className= "Panel-title" >{this.props.title}</h4>
+        <div className= "Panel-content">{this.props.content}</div>
       </div>
     );
   }
