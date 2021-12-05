@@ -13,8 +13,14 @@ class App extends Component {
 
         </div>
            <br />
-          <Panel title="Ueberschrift" content="Test1234567" />
-          <Panel title="Noch eine Überschrift" content="Test1234567" />
+          <Panel title="Ueberschrift"> 
+            <p> Ich bin ein Absatz</p>
+          </Panel>
+          <br />
+          
+          <Panel title="Noch eine Überschrift">
+            <Button label="Klick mich!" />
+          </Panel>
         </div>     
     );
   }
