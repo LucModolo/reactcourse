@@ -5,25 +5,28 @@ import Panel from "./Panel.js"
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2 className="App-heading">Welcome to React!!!</h2>
+  constructor(props) {
+    super (props);
 
-        </div>
-           <br />
-          <Panel title="Ueberschrift"> 
-            <p> Ich bin ein Absatz</p>
-          </Panel>
-          <br />
-          
-          <Panel title="Noch eine Überschrift">
-            <Button label="Klick mich!" />
-          </Panel>
-        </div>     
-    );
+    this.state = {
+      name: "Welt"
+    }
+
+    setTimeout(() => {
+      this.setState({
+        name: " Venus"
+      })      
+    },3000)
   }
+
+render(){
+  return (
+    <div className="App">
+      <h2>Hallo {this.state.name}!</h2>
+      <p>{this.state.name.length}</p>
+    </div>
+  )
+ }
 }
 
 export default App;
