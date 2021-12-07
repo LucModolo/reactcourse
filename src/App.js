@@ -9,10 +9,12 @@ class App extends Component {
     super (props);
 
         </div>
-           <br />
-          <Panel title="Ueberschrift" content="Test1234567" />
-          <Panel title="Noch eine Überschrift" content="Test1234567" />
+        <br />
+        <Panel title Ueberschrift="Überschrift" contend label="Test1234567" />
+        <br />
+        <Panel title title Ueberschrift="Noch eine Überschrift" contend label="Test123456" />
         </div>     
+      
     );
   }
 
