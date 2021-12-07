@@ -8,15 +8,12 @@ class App extends Component {
   constructor(props) {
     super (props);
 
-    this.state = {
-      name: "Welt"
-    }
-
-    setTimeout(() => {
-      this.setState({
-        name: " Venus"
-      })      
-    },3000)
+        </div>
+           <br />
+          <Panel title="Ueberschrift" content="Test1234567" />
+          <Panel title="Noch eine Überschrift" content="Test1234567" />
+        </div>     
+    );
   }
 
 render(){
