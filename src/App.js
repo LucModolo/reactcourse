@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Button from "./Button";
 import Panel from "./Panel.js"
-
 import './App.css';
 
 class App extends Component {  
@@ -14,15 +13,17 @@ render(){
        
         </div> 
         <br /> 
-          <Panel title="Überschrift" content="Test1234567" /> 
+          <Panel title="Überschrift"> 
+          <p> Ich bin ein Absatz!</p>
+          </Panel>
           <br/>
 
-          <Panel title="Noch eine Überschrift" content="Der Content">
-          <button Label= "Test" />
+          <Panel title="Noch eine Überschrift">
+            <Button label="Klick mich!" />
           </Panel>
-      </div>  
-        )
- }
-}
+      </div> 
+        );
+    }
+  }
 
 export default App;
