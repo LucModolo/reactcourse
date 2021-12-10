@@ -1,5 +1,5 @@
 
-// Kurs Positiob 17
+// Kurs Positiob 17 und Lösung Musterlösung Counter
 
 import React, { Component } from 'react';
 import Button from "./Button";
@@ -7,71 +7,30 @@ import Panel from "./Panel.js"
 import './App.css';
 
 class App extends Component {  
+
   constructor(props){
     super(props);
-
-      this.state = {
-      name:"Welt"
+  
+    this.state = {
+      counter: 0
+      }
+      this.incrementCounter = this.incrementCounter.bind(this);
     }
-    this.changeName = this.changeName.bind(this);
-  }
 
- /*   setTimeout(()=> {
+   incrementCounter() {
       this.setState({
-        name: "Venus"
-      })
-    },3000);
-  */
-  
-   changeName() {
-    alert("cangeName!"); 
-    this.setState({
-       name:"Venus"
-     })
-    }
-  
+      counter: this.state.counter + 1
+    })
+  }
 
   render(){
         return (
         <div className="App">
-          <h2>Hallo {this.state.name}!</h2>
-          <p>{this.state.name.length}</p>
-          <button onClick={this.changeName}>
-            Verändere den Namen
-          </button>
+          <h2>Der aktuelle counter ist: {this.state.counter}</h2>
+          <button onClick={this.incrementCounter}>Erhöhe den Zähler</button>
           </div> 
           );
       }
     }
-  
-
-
-
-
-
-
-/*
-  render(){
-  return (
-      <div className="App">
-        <div className="App-header">
-            <h2 callName="App-heading">"Welcome to React" </h2>
-       
-        </div> 
-        <br /> 
-          <Panel title="Überschrift"> 
-          <p> Ich bin ein Absatz!</p>
-          </Panel>
-          <br/>
-
-          <Panel title="Noch eine Überschrift">
-            <Button label="Klick mich!" />
-          </Panel>
-      </div> 
-        );
-    }
-  }
-*/
-
 
 export default App;
