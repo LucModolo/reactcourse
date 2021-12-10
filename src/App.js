@@ -13,6 +13,7 @@ class App extends Component {
       this.state = {
       name:"Welt"
     }
+    this.changeName = this.changeName.bind(this);
   }
 
  /*   setTimeout(()=> {
@@ -24,25 +25,20 @@ class App extends Component {
   
    changeName() {
     alert("cangeName!"); 
-    
-
-    /*
     this.setState({
        name:"Venus"
      })
-    */ 
-   }
-
+    }
   
 
   render(){
-  
-  
-    return (
+        return (
         <div className="App">
           <h2>Hallo {this.state.name}!</h2>
           <p>{this.state.name.length}</p>
-          <button onClick={this.changeName}>Verändere den Namen</button>
+          <button onClick={this.changeName}>
+            Verändere den Namen
+          </button>
           </div> 
           );
       }
