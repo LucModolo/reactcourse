@@ -1,5 +1,5 @@
 
-// Kurs Positiob 17 und Lösung Musterlösung Counter
+// Kurs 22 Excurs rendering
 
 import React, { Component } from 'react';
 import Button from "./Button";
@@ -11,26 +11,43 @@ class App extends Component {
   constructor(props){
     super(props);
   
-    this.state = {
-      counter: 0
-      }
-      this.incrementCounter = this.incrementCounter.bind(this);
-    }
 
-   incrementCounter() {
-      this.setState({
-      counter: this.state.counter + 1
+  this.state = {
+    todos: [
+      "Obst einkaufen",
+      "Programmieren lernen",
+      "TODO"
+    ]
+   }
+  this.addTodo = this.addTodo.bind(this);
+
+    
+  }
+  
+  addTodo(){
+    let todos = this.state.todos;
+    todos.push("4. Todo");
+    this.setState({
+      todos:todos
     })
+
   }
 
   render(){
         return (
         <div className="App">
-          <h2>Der aktuelle counter ist: {this.state.counter}</h2>
-          <button onClick={this.incrementCounter}>Erhöhe den Zähler</button>
+          <h1>To Do Liste</h1>
+            <ul className="App-todo">
+              {this.state.todos.map(function(todo){
+                return (
+                  <li>{todo}</li>
+                  )
+                })}
+            </ul>
+            <button onClick={this.addTodo}>Todo hinzufügen</button>
           </div> 
           );
       }
-    }
+    }    
 
 export default App;
