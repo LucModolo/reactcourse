@@ -39,13 +39,16 @@ class App extends Component {
         return (
         <div className="App">
           <h1>To Do Liste</h1>
+            <Panel title="Todoos">
             <ul className="App-todo">
-              {this.state.todos.map(function(todo){
-                return (
-                  <li key={todo.id}>#{todo.id}: {todo.title}</li>
-                  )
-                })}
+                {this.state.todos.map(function(todo){
+                  return (
+                    <li key={todo.id}>#{todo.id}: {todo.title}</li>
+                    )
+                  })}
             </ul>
+            </Panel>
+
             <button onClick={this.addTodo}>Todo hinzufügen</button>
           </div> 
           );
