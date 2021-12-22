@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import Button from "./Button";
 import Panel from "./Panel.js"
+import TodoList from './TodoList';
 import './App.css';
 
 class App extends Component {  
@@ -39,19 +40,12 @@ class App extends Component {
         return (
         <div className="App">
           <h1>To Do Liste</h1>
-            <Panel title="Todoos">
-            <ul className="App-todo">
-                {this.state.todos.map(function(todo){
-                  return (
-                    <li key={todo.id}>#{todo.id}: {todo.title}</li>
-                    )
-                  })}
-            </ul>
-            </Panel>
+           
+            <TodoList todos={this.state.todos}/>
 
             <button onClick={this.addTodo}>Todo hinzufügen</button>
           </div> 
-          );
+          )
       }
     }    
 
