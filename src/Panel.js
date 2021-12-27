@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import "./Panel.css"
+import "./Panel.css";
+
 class Panel extends Component {
-  render() {
-    
-    console.log(this);
-    return (
-      <div className="Panel">
-        <h4 className= "Panel-title" >{this.props.title}</h4>
-        <p className= "Panel-content">{this.props.children}</p>
-      </div>
-    );
-  }
+
+    render() {
+        console.log(this);
+        return (
+            <div className="Panel">
+                <h4 className="Panel-title">
+                    {this.props.title}
+                </h4>
+                <div className="Panel-content">
+                    {this.props.children}
+                </div>
+            </div>
+        )
+    }
+
 }
 
 export default Panel;

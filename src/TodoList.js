@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
-import Button from "./Button";
-import Panel from "./Panel.js"
+import Panel from "./Panel";
 
+class TodoList extends Component {
 
-class TodoList extends Component { 
-
-
-  render() {
-    return(
-
-    <Panel title="Todos">
-    <ul className="App-todo">
-        {this.props.todos.map(function(todo){
-          return (
-            <li key={todo.id}>#{todo.id}: {todo.title}</li>
-            )
-          })}
-    </ul>
-    </Panel>
-    
-    )
-  }
+    render() {
+      return (
+        <Panel title="Todos">
+          <ul className="App-todo">
+            {this.props.todos.map(function(todo) {
+              return (
+                <li key={todo.id}>#{todo.id}: {todo.title}</li>
+              )
+            })}
+          </ul>
+        </Panel>
+      )
+    }
 }
 
- export default TodoList;
-
- 
+export default TodoList;
