@@ -25,15 +25,24 @@ class TodoAdd extends Component {
     }
 
     render() {
+        let buttonStyles = {
+            backgroundColor: (this.state.newTodo.length < 3 ? "yellow" : "green")
+        }
+
+        
         return (
-            <Panel title="Todo hinzufügen">
+            <Panel title="Todo hinzufügen"
+           
+            >
                 <input 
                     type="text" 
                     onChange={this.onTodoInputChange}
                     value={this.state.newTodo}
-                />
+                    />
                 {(this.state.newTodo != "" ? (
-                    <button onClick={this.onTodoAdd}>
+                    <button 
+                    onClick={this.onTodoAdd} 
+                        style={buttonStyles}>
                         Todo hinzufügen ({this.state.newTodo.length})
                     </button>
                 ) : null)}
@@ -41,5 +50,7 @@ class TodoAdd extends Component {
         )
     }
 }
+
+
 
 export default TodoAdd;
