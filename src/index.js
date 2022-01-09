@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { createStore } from 'redux';
+import counter from './reducers/index';
 import './index.css';
 
-/*
-let numbers = [2, 3, 5];
-let numbersNew = numbers.map(function(item) {
-  return item * item;
-})
-console.log(numbersNew);
-*/
+let store = createStore(counter);
+console.log(store.getState());
+store.dispatch({type: "INCREMENT"});
+console.log(store.getState());
 
+
+let render =() => {
+  
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+  <App
+     value={store.getState()}
+     onIncrement={() => {store.dispatch({type: "INCREMENT"});}}
+     />,
+    
+     document.getElementById('root')
+ );
+}
+
+
+render();
+store.subscribe(render);
